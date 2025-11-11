@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dados da Obra - Ficha Catalográfica</title>
+  <style>
+    /* Fundo em degradê e centralização */
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to bottom, #1e2a80, #9aa8d4, #ffffff);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #fff;
+    }
+
+    h2 {
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #fff;
+    }
+
+    form {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      padding: 40px 50px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 30px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input, select, textarea {
+      background: #fff;
+      color: #333;
+    }
+
+    textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    button {
+      background-color: #4a2ac9;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 15px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #3b23a3;
+      transform: scale(1.02);
+    }
+
+    @media (max-width: 500px) {
+      form {
+        padding: 30px 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Formulário - Dados da Obra</h2>
+
+  <form action="ficha_resultado.html" method="post">
+    <input type="text" name="titulo" placeholder="Título da Obra" required>
+    <input type="text" name="subtitulo" placeholder="Subtítulo (opcional)">
+    <input type="text" name="curso" placeholder="Curso" required>
+    <select name="tipo_trabalho" required>
+      <option value="">Tipo de Trabalho</option>
+      <option>TCC</option>
+      <option>Monografia</option>
+      <option>Artigo</option>
+      <option>Dissertação</option>
+      <option>Tese</option>
+    </select>
+    <input type="number" name="ano" placeholder="Ano de Publicação" min="1900" max="2100" required>
+    <textarea name="palavras_chave" placeholder="Palavras-chave (separadas por vírgula)" required></textarea>
+    <textarea name="resumo" placeholder="Resumo (breve descrição da obra)" required></textarea>
+
+    <button type="submit">Gerar Ficha</button>
+  </form>
+   
+</body>
+</html>
